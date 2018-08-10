@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-buttons>
+    <back-btn></back-btn>
+  </ion-buttons>
+</ion-header>
+<ion-content>
+  <!--logo-->
+  <div class="logoBox">
+    <ion-img width="145" height="85" [src]="'assets/imgs/login_logo.png'"></ion-img>
+  </div>
+  <!--登录表单-->
+  <form (submit)="doLogin()">
+    <ul class="list">
+      <li class="list-item">
+        <ion-input type="tel" [(ngModel)]="account.tel" name="tel" placeholder="请输入您的手机号"></ion-input>
+      </li>
+      <li class="list-item">
+        <ion-input [type]="passwordType" [(ngModel)]="account.password" name="password"
+                   placeholder="请输入您的密码">
+        </ion-input>
+        <button type="button" ion-button [clear]="true" (click)="switchPasswordInputType()">
+          <ion-icon name="ios-eye"></ion-icon>
+        </button>
+      </li>
+    </ul>
+    <div class="loginBtnBox">
+      <button type="submit" ion-button color="primary" [block]="true">登录</button>
+    </div>
+    <div class="registerBox">
+      <button type="button" ion-button [clear]="true" (click)="goRegister()">立即注册</button>
+      <button type="button" ion-button [clear]="true" (click)="goForgetPassword()">忘记密码</button>
+    </div>
+  </form>
+  <!--第三方登录-->
+  <div class="footerBox">
+    <span text-center>第三方平台登录</span>
+    <div class="thirdPartyLoginBox">
+      <ion-img width="44" height="44" [src]="'assets/imgs/weibo_login.png'"></ion-img>
+      <ion-img width="44" height="44" [src]="'assets/imgs/QQ_login.png'"></ion-img>
+      <ion-img width="44" height="44" [src]="'assets/imgs/weixin_login.png'"></ion-img>
+    </div>
+  </div>
+</ion-content>

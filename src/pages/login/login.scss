@@ -1,0 +1,73 @@
+page-login {
+  ion-content.content {
+    background-color: $bg0;
+    .logoBox {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .list {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      .list-item {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        border-radius: 25px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        background-color: $bg1;
+        input, input::-webkit-input-placeholder, button.button {
+          color: $text0;
+        }
+      }
+    }
+    .loginBtnBox button {
+      width: 80%;
+      height: 4rem;
+      margin: 0 auto;
+      border-radius: 25px;
+      background-color: $btn0;
+      color: $text7;
+    }
+    .registerBox {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      button {
+        color: $text2;
+      }
+    }
+    ion-img {
+      background: none;
+    }
+    .footerBox {
+      width: 80%;
+      height: 100px;
+      border-top: 1px solid $br0;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%);
+      span {
+        width: 150px;
+        display: inline-block;
+        font-family: PingFang-SC-Medium, serif;
+        font-size: 16px;
+        color: $text1;
+        background-color: $bg0;
+        padding: 0 10px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .thirdPartyLoginBox {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+back-btn {
+  button.button .button-inner {
+    color: $text5;
+  }
+  ion-icon {
+    margin: -1px 0 0;
+    display: inherit;
+    min-width: 18px;
+    font-size: 3.4rem;
+    color: $text5;
+  }
+}

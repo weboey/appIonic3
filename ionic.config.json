@@ -1,0 +1,7 @@
+{
+  "name": "sxzq-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,6 @@
+<!--color="danger"-->
+<ion-segment [(ngModel)]="selectedFilter"  (ionChange)="segmentChanged($event)">
+  <ion-segment-button value="{{item.id}}" *ngFor="let item of items">
+    <span>{{item.title}}</span>
+  </ion-segment-button>
+</ion-segment>

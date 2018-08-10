@@ -1,0 +1,6 @@
+
+<ion-segment [(ngModel)]="selectValue" (ionChange)="segChange($event)">
+  <ion-segment-button *ngFor="let item of tabList;" [value]="item.id">
+    <span>{{item.name}}</span>
+  </ion-segment-button>
+</ion-segment>

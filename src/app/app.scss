@@ -1,0 +1,48 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$component-bg: $background-color;
+$text-color:        #000;
+
+.toolbar-background-ios{
+  background-color: $background-color;
+}
+
+/* 搜索 icon*/
+//.searchbar-ios .searchbar-search-icon{top:12px;}
+/* segment 组件*/
+.segment-ios{
+  background-color: $component-bg;
+  .segment-button{
+    border: none;
+    &:first-of-type{border-radius: 0;}
+    &:last-of-type{border-radius: 0;}
+    &>span{
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+    }
+    &.segment-activated{
+      background-color: transparent;
+      color: #ff900d;
+      &>span{
+        border-bottom: 1px solid #2ec95c;
+      }
+    }
+  }
+}
+

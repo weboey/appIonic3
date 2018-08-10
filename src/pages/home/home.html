@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+ <!--   <ion-buttons left>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="ios-apps-outline"></ion-icon>
+      </button>
+    </ion-buttons>-->
+    <ion-searchbar placeholder="搜索"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()">
+        <ion-icon name="ios-camera"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <home-list-tip *ngIf="false"></home-list-tip>
+  <!-- 新闻过滤 -->
+  <home-list-filter></home-list-filter>
+  <!-- 新闻列表 -->
+  <page-item-list></page-item-list>
+</ion-content>

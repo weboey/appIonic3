@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <div class="item item-block item-md list-head" style="padding-left:0">
+          <img [src]="item.profilePic"/>
+          <div class="head-title">
+            <div>我是特朗普总统</div>
+            <span>2天前 19:35</span>
+          </div>
+          <ion-icon name="md-heart-outline" item-end (click)="openListEditPopover($event)"></ion-icon>
+        </div>
+      </ion-col>
+
+      <ion-col col-12>
+        <p style="margin: 0">
+          据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落
+          实中央领导指示精神和省委部署,高度关注长春长生生物科技有限
+          责任公司疫苗事件,要求对疫苗事件涉及到的责任者......
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="detail-attr">
+      <ion-col col-6 >评论 3</ion-col>
+      <ion-col col-6>点赞 1235</ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <home-blog-comments></home-blog-comments>
+
+  <div style="" class="footer-tools">
+    <span><ion-icon name="ios-git-branch"></ion-icon>分享</span>
+    <span><ion-icon name="ios-woman"></ion-icon>评论</span>
+    <span><ion-icon name="ios-thumbs-up"></ion-icon>赞</span>
+  </div>
+</ion-content>
+

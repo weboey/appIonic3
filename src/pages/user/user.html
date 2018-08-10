@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <ion-item>
+        <ion-avatar item-start>
+            <img src="../../assets/icon/favicon.ico">
+        </ion-avatar>
+        <p text-right>  <ion-icon class='ios-cog-style' name="ios-cog" (click)="presentModal()"></ion-icon></p>
+        <h2>大黄蜂</h2>
+        <p>
+          <span margin-right>Lv9</span><ion-icon margin-right name='md-tablet-portrait'></ion-icon><ion-icon margin-right ios="ios-laptop" md="md-laptop"></ion-icon>  <ion-icon margin-right ios="ios-card" md="md-card"></ion-icon>
+        </p>
+        <p>专业收二级资金、垃圾债券，同时为银行、基金客户提供过券服务、费用低廉</p>
+    </ion-item>
+      <div class='user-box-router'>
+          <div text-center><ion-icon ios="ios-document" md="md-document"></ion-icon><div>帖子</div></div>
+          <div text-center>  <ion-icon ios="ios-heart" md="md-heart"></ion-icon><div>关注</div></div>
+          <div text-center><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon><div>好友</div></div>
+          <div text-center><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon><div>粉丝</div></div>
+      </div>
+      <div class='user-box-router'>
+          <div text-center><ion-icon ios="ios-book" md="md-book"></ion-icon><div>评论记录</div></div>
+
+          <div text-center> <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon><div>我的点赞</div></div>
+
+          <div text-center>  <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon><div>收藏记录</div></div>
+
+          <div text-center>  <ion-icon ios="ios-filing" md="md-filing"></ion-icon><div>草稿箱</div></div>
+      </div>
+  </ion-card-content>
+  <ion-card-content>
+    <button ion-button (click)="goLogin()">登录</button>
+  </ion-card-content>
+</ion-content>

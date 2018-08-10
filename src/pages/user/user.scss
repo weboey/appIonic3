@@ -1,0 +1,17 @@
+page-user {
+  .ios-cog-style{
+      font-size: 30px;
+  }
+  .item-inner{
+    border: none!important;
+  }
+  .user-box-router{
+    display: flex;
+    &>div{
+     width: 25%;
+     border: 1px solid #999;
+     height: 60px;
+     padding-top: 15px;
+    }
+  }
+}

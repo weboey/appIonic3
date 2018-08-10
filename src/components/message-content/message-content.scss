@@ -1,0 +1,16 @@
+message-content {
+  ion-row:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+  }
+  ion-row {
+    .mes-img {
+      width: 30px;
+    }
+    .mes-con {
+      flex: 1;
+    }
+    .mes-time {
+      width: 40px;
+    }
+  }
+}

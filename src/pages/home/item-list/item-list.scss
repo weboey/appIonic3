@@ -1,0 +1,25 @@
+page-item-list {
+  ion-row:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+  }
+  .list-head{
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%
+    }
+    .head-title{
+      flex: 1;
+      margin-left: 8px;
+      &>div{font-weight: bold}
+      &>span{font-size: 1.4rem}
+    }
+  }
+  .footer-icon{
+    margin: 3px 0;
+  }
+  ion-icon{
+    font-size: 1.6em;
+    vertical-align: middle;
+  }
+}

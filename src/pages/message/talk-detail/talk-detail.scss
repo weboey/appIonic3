@@ -1,0 +1,19 @@
+page-talk-detail {
+  ion-content {
+
+  }
+  ion-footer {
+    height: 30px;
+    padding: 5px 10px;
+    .send-btn {
+      input {
+        background: #69717d;
+        height: 20px;
+      }
+      button {
+        height: 20px;
+        background: #ff900d;
+      }
+    }
+  }
+}

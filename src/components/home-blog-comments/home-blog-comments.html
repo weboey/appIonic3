@@ -1,0 +1,23 @@
+<!-- Generated template for the HomeBlogCommentsComponent component -->
+
+<ul>
+  <li *ngFor="let comment of commentList">
+
+    <div class="item item-block item-md list-head" style="padding-left:0">
+      <img [src]="comment.profilePic"/>
+      <div class="head-title">
+        <div>{{comment.userName}}</div>
+        <span>{{comment.desc}}</span>
+      </div>
+    </div>
+
+    <div style="display: flex;justify-content: space-between;margin-left: 48px;">
+      <span>{{comment.date}}</span>
+      <div>
+        <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+        <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+        <span>254</span>
+      </div>
+    </div>
+  </li>
+</ul>

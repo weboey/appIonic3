@@ -10,6 +10,7 @@ export class BlogComments {
     let items = [
       {
         "commentId":1,
+        "blogId": 1,
         "uid": 1,
         "userName": '四十大神兽',
         "desc": "美国总统快来救救我们吧",
@@ -18,6 +19,7 @@ export class BlogComments {
       },
       {
         "commentId":2,
+        "blogId": 1,
         "uid": 2,
         "userName": '小猪佩奇',
         "desc": "国家鼓励大家买买买...",
@@ -26,6 +28,7 @@ export class BlogComments {
       },
       {
         "commentId":3,
+        "blogId": 1,
         "uid": 3,
         "userName": '小猪佩奇，我配你',
         "desc": "先打一拳在说",
@@ -34,6 +37,7 @@ export class BlogComments {
       },
       {
         "commentId":4,
+        "blogId": 1,
         "uid": 4,
         "userName": '三胖',
         "desc": "唐三藏",

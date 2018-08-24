@@ -28,7 +28,7 @@
   <ion-card>
     <ion-card-content>
       <ion-item>
-        <ion-avatar  item-start> <img src="../../../../assets/icon/favicon.ico"></ion-avatar>
+        <ion-avatar  item-start> <img [src]="imageUrl"></ion-avatar>
         <button item-end ion-button (click)="presentActionSheet()">上传头像</button>
       </ion-item>
     </ion-card-content>

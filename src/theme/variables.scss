@@ -6,6 +6,14 @@ $font-path: "../assets/fonts";
 
 @import "./reset";
 
+// ionic 重构样式
+@import "ionicRefactorStyle";
+@import "icon";
+
+// 共用样式
+@import "common";
+@import "button";
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -13,8 +21,8 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-$text-color:        #000;
-$background-color:  #fff;
+$text-color: $c-text-0;
+$background-color: $c-bg-0;
 //$text-color:        #f8f8f8;
 //$background-color:  #1f2532;
 
@@ -27,34 +35,37 @@ $background-color:  #fff;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: $c-high-light,
+  secondary: #32db64,
+  danger: #f53d3d,
+  light: #f4f4f4,
+  dark: #222
 );
 
+$loading-ios-spinner-color: $c-text-0;
+$loading-ios-text-color:$c-text-0;
+$loading-ios-background:rgba($c-bg-2, .85);
 
+$refresher-icon-color: $c-text-0;
+$refresher-text-color: $c-text-0;
+$infinite-scroll-loading-color: $c-text-0;
+$infinite-scroll-loading-text-color: $c-text-0;
+
+//$checkbox-ios-icon-size: 18px;
+//$checkbox-ios-icon-border-color-on: green;
+//$checkbox-ios-background-color-on: green;
+//$checkbox-ios-icon-border-color-off: red;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
-
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -65,7 +76,6 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -73,9 +83,11 @@ $colors: (
 
 @import "ionic.ionicons";
 
-
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+
+// 改变searchBar searchIcon 颜色
+$searchbar-ios-input-search-icon-color: #74797e;

@@ -1,16 +1,34 @@
 message-content {
-  ion-row:not(:last-of-type){
-    border-bottom: 1px solid #ccc;
+  .content-color {
+    background-color: $c-bg-2;
   }
-  ion-row {
-    .mes-img {
-      width: 30px;
+  .no-data {
+    .message-no-pic {
+      margin-top: 7rem;
+      text-align: center;
+      img {
+        width: 12rem;
+        height: 10rem;
+        display: inline-block;
+      }
     }
-    .mes-con {
-      flex: 1;
+    .message-no-com {
+      margin: 4rem 0 5rem 0;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0 5rem;
+      color: $c-text-1;
     }
-    .mes-time {
-      width: 40px;
+    .message-no-btn {
+      text-align: center;
+      button {
+        width: 12rem;
+        border-radius: 2px;
+      }
     }
+  }
+  ion-content {
+
   }
 }

@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{titleText}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="inform-detail">
+  <ion-grid>
+    <ion-row *ngFor="let item of informCom">
+      <div *ngIf="informFilter === '1'" (click)="goPointInform('58')">
+        <div class="detail-name">{{item.name}}</div>
+        <div class="detail-time">{{item.time}}</div>
+      </div>
+      <div *ngIf="informFilter !== '1'">
+        <div class="detail-name" *ngIf="informFilter !== '3'">{{item.name}}</div>
+        <div class="detail-focus" *ngIf="informFilter === '3'">
+          <span class="span-focus">{{item.name}}</span>
+          <span>关注了你，关注对方发起聊天</span>
+        </div>
+        <div class="detail-time">{{item.time}}</div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

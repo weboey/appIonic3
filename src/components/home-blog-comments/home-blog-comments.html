@@ -1,23 +1,23 @@
 <!-- Generated template for the HomeBlogCommentsComponent component -->
-
 <ul>
-  <li *ngFor="let comment of commentList">
-
+  <li *ngFor="let comment of commentList" (click)="gotoDetail()">
     <div class="item item-block item-md list-head" style="padding-left:0">
       <img [src]="comment.profilePic"/>
       <div class="head-title">
-        <div>{{comment.userName}}</div>
+        <div class="text-5">{{comment.userName}}</div>
         <span>{{comment.desc}}</span>
       </div>
-    </div>
-
-    <div style="display: flex;justify-content: space-between;margin-left: 48px;">
-      <span>{{comment.date}}</span>
-      <div>
-        <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+      <div class="thumbs-box">
         <ion-icon name="ios-thumbs-up-outline"></ion-icon>
         <span>254</span>
       </div>
+    </div>
+    <div class="comment-footer" style="justify-content: space-between">
+      <div>
+        <span>{{comment.date}}</span>
+        <span class="reply"><span *ngIf="level === 0">3</span> 回复</span>
+      </div>
+      <span *ngIf="true" (click)="remove($event)">删除</span>
     </div>
   </li>
 </ul>

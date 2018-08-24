@@ -1,0 +1,54 @@
+page-blog-comment-detail {
+  ion-card{
+    background-color: $c-bg-2 !important;
+    width: 100% !important;
+    .item{
+      background-color: $c-bg-2;
+    }
+    h2{
+      font-size: 1.8rem !important;
+    }
+  }
+
+  ul{
+    padding: 16px;
+    background-color: $c-bg-0;
+    li{
+      background-color: $c-bg-0;
+    }
+  }
+  .list-head{
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%
+    }
+    .head-title{
+      flex: 1;
+      margin-left: 8px;
+      &>div{font-weight: bold}
+      &>span{font-size: 1.4rem}
+    }
+  }
+
+  .comment-footer{
+    display: flex;
+    margin-left: 48px;
+    align-items: center;
+    height: 28px;
+    color: $c-text-3;
+
+    .reply{
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+      margin-left: 4px;
+      border-radius: 10px;
+      padding: 0 8px;
+      background-color: $c-bg-3;
+    }
+    ion-icon[name*='thumbs-up']{
+      font-size: 1.4em;
+    }
+  }
+}

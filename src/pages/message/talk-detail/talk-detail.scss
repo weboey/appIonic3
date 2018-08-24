@@ -2,18 +2,26 @@ page-talk-detail {
   ion-content {
 
   }
+  .talk-content {
+    background-color: $c-bg-2;
+  }
   ion-footer {
-    height: 30px;
-    padding: 5px 10px;
-    .send-btn {
-      input {
-        background: #69717d;
-        height: 20px;
-      }
-      button {
-        height: 20px;
-        background: #ff900d;
-      }
+    display: flex;
+    padding: 8px 10px;
+    background-color: $c-bg-0;
+    input {
+      display: inline-block;
+      flex: 1;
+      background: $bg2;
+      height: 36px;
+      border-radius: 2px;
+      margin-right: 8px;
+    }
+    button {
+      width: 60px;
+      height: 36px;
+      background: $text6;
+      border-radius: 2px;
     }
   }
 }

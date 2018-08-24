@@ -1,0 +1,181 @@
+// 设置header样式
+ion-header.header {
+  ion-navbar.toolbar {
+    padding: 0;
+    height: 4rem;
+  }
+  .toolbar-background {
+    background-color: $c-bg-3;
+  }
+  ion-title.title .toolbar-title {
+    font-family: PingFang-SC-Bold, serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: $text4;
+  }
+  .toolbar .searchbar-input{
+    background-color: $c-bg-0;
+  }
+}
+
+// 去除img的背景色
+ion-img.img-loaded {
+  background: none;
+}
+
+/* 搜索组件*/
+ion-searchbar.searchbar {
+  .searchbar-input, .searchbar-input::-webkit-input-placeholder {
+    color: $c-text-2;
+  }
+  .searchbar-search-icon {
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
+}
+
+
+/* footer tab */
+.tabs-ios .tabbar{
+  background-color: $c-bg-1 !important;
+}
+
+/* toast 消息提示*/
+.toast-middle{
+  background-color: transparent !important;
+  .toast-container{
+    justify-content: center;
+    .toast-message{
+      display: inline-flex;
+      color: $c-text-0;
+      background-color: rgba($c-bg-2, .85);
+      padding: 1.5rem 1.8rem;
+      flex: none;
+      border-radius: 0.65rem;
+    }
+  }
+}
+.has-refresher > .scroll-content{
+  border-top: none !important;
+}
+
+/* 模态框 */
+ion-modal{
+  .content-ios{
+    background-color: $c-bg-2 !important;
+  }
+}
+/* ActionSheetController 组件*/
+.action-sheet-ios{
+  .action-sheet-container{
+    padding: 0 !important;
+  }
+  .action-sheet-group{
+    background-color: $c-bg-3 !important;
+    .action-sheet-button{
+      border-color: $c-bg-1;
+      color: $c-text-0;
+      .button-inner{
+        justify-content: flex-start;
+      }
+      &.activated{
+        background-color: lighten($c-bg-3, 2%) !important;
+        border: 0 !important;
+      }
+    }
+  }
+}
+.horizontal-sheet{
+  .action-sheet-group{
+    display: flex;
+    flex-direction: row;
+    .action-sheet-button{
+      flex: 1;
+      .button-inner{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        ion-icon{
+          font-size: 4rem;
+          margin-bottom: 1rem;
+          padding-right: 0;
+
+          &.ion-ios-images-outline2{
+            position: relative;
+            &:before{
+              display: none;
+            }
+            &:after{
+              content: '';
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              background: url('/assets/imgs/weibo_login.png');
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+    &.action-sheet-group-cancel{
+      .action-sheet-cancel{
+        padding: 8px;
+        min-height: 4rem;
+        background-color: $c-bg-3;
+      }
+    }
+  }
+}
+
+/* segment 组件 */
+.segment{
+  background-color: $c-bg-2;
+  ion-segment-button.segment-button{
+    color: $c-text-0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3.8rem;
+    line-height: 3.6rem;
+    border: none;
+    &:first-of-type{border-radius: 0;}
+    &:last-of-type{border-radius: 0;}
+    &.segment-activated{
+      color: $c-high-light;
+      background-color: transparent;
+      & > span{
+        border-bottom: 2px solid $c-high-light;
+        height: 100%;
+      }
+    }
+    &>span{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+/* alert 弹出框组件 */
+.alert-ios .alert-wrapper{
+  background-color: $c-bg-3 !important;
+  .alert-title{
+    color: $c-text-0;
+  }
+  .alert-button{
+    border-color: $c-bg-1  !important;
+    color: $c-text-0;
+    &.activated{
+      background-color: lighten($c-bg-3, 5%) !important;
+    }
+  }
+}
+
+.popover-wrapper .item{
+  background-color: $c-bg-3 !important;
+}
+.popover-ios .popover-arrow::after{
+  background-color: $c-bg-3 !important;
+}

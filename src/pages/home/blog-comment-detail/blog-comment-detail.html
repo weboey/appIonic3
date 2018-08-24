@@ -1,0 +1,48 @@
+<!--
+  Generated template for the BlogCommentDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>3 条回复</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card no-margin padding>
+    <div class="item item-block item-md list-head" style="padding-left:0">
+      <img src="assets/img/speakers/bear.jpg"/>
+      <div class="head-title">
+        <div class="text-5">小猪佩奇</div>
+        <span class="text-3">5-29 16:21</span><span margin-left class="text-3">举报</span>
+      </div>
+      <fw-follow-btn style="margin-right: 4px"></fw-follow-btn>
+    </div>
+
+    <h2 style="margin: 8px 0 10px 48px">国家鼓励买买买.......</h2>
+
+    <div class="comment-footer flex-space">
+      <div style="display: flex; align-items: center">
+        <img src="" alt="" class="user-head-sm">
+        <img src="" alt="" class="user-head-sm">
+        <img src="" alt="" class="user-head-sm">
+        <img src="" alt="" class="user-head-sm">
+        <span style="margin-left: 5px" (click)="gotoThumbsPage()">254 人赞过 <ion-icon name="ios-arrow-forward"></ion-icon></span>
+      </div>
+      <div>
+        <ion-icon name="ios-thumbs-up-outline" ></ion-icon>
+        <span>赞</span>
+      </div>
+    </div>
+  </ion-card>
+
+
+
+  <home-blog-comments [level]="1"></home-blog-comments>
+</ion-content>

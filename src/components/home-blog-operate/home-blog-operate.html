@@ -1,0 +1,33 @@
+
+<ion-list>
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="1">
+      <button ion-item (click)="edit()">编辑</button>
+      <button ion-item (click)="remove()">删除</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="2">
+      <button ion-item (click)="collection()">收藏</button>
+      <button ion-item (click)="report()">举报</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+      <button ion-item (click)="collection()">收藏</button>
+      <button ion-item>不看该作者</button>
+      <button ion-item (click)="report()">举报</button>
+      <button ion-item>不感兴趣</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="4">
+      <button ion-item (click)="report()">举报</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="5">
+      <button ion-item icon-start (click)="createBlog()">
+        <ion-icon name="ios-create"></ion-icon>
+        发帖
+      </button>
+      <button ion-item icon-start (click)="createBlogOfLong()">
+        <ion-icon name="md-copy"></ion-icon>
+        长文
+      </button>
+    </ng-container>
+  </ng-container>
+</ion-list>
+

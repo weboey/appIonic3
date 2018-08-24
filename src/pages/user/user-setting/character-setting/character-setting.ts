@@ -36,6 +36,7 @@ declare var cordova: any;
 export class CharacterSettingPage extends BaseUI {
   currentItems: Item[];
   lastImage: string = null;
+  imageUrl = '../../../../assets/icon/favicon.ico';
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
               public navParams: NavParams,
@@ -95,9 +96,10 @@ export class CharacterSettingPage extends BaseUI {
       if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
         this.filePath.resolveNativePath(imagePath) // 获取安卓path
           .then(filePath => {
+            this.imageUrl  = normalizeURL(filePath) + '.png';
             // 获取正确的路径
             let correctPath = filePath.substr(0, filePath.lastIndexOf('/')+1);
-            // 获取正确的文件名
+              // 获取正确的文件名
             let currentPath = filePath.substring(imagePath.lastIndexOf('/')+1, imagePath.lastIndexOf('?'));
             this.copyFileToLocalDir(correctPath, currentPath, this.createFileName())
           })
@@ -116,6 +118,7 @@ export class CharacterSettingPage extends BaseUI {
   copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
       this.lastImage = newFileName;
+
     }, error => {
       super.showToast(this.toastCtrl, "存储图片到本地图库出现错误。");
     });

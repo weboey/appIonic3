@@ -1,0 +1,18 @@
+<!-- Generated template for the DraftItemComponent component -->
+<ion-card *ngFor="let item of currentItems">
+  <ion-row>
+    <ion-col col-12>
+      <div class="item item-block item-md list-head">
+        <div class="head-title">
+          <span>最后编辑时间 {{item.date}}</span>
+        </div>
+        <button ion-button [clear]="true" (click)="editArticle($event, item.id)">
+          <ion-icon name="ios-arrow-down" item-end></ion-icon>
+        </button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-card-content>
+    <p class="blog-text">{{item.content}}...</p>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,19 @@
+page-my-share-record {
+  .card {
+    margin: 0 0 10px;
+    width: 100%;
+    box-shadow: none;
+    background-color: $c-bg-2;
+    ion-row.row {
+      padding: 12px;
+    }
+    .card-content {
+      padding-top: 6px;
+      padding-left: 10px;
+      padding-bottom: 2px;
+      p {
+        color: $c-text-0;
+      }
+    }
+  }
+}

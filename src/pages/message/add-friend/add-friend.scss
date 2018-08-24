@@ -1,0 +1,47 @@
+page-add-friend {
+  ion-row:not(:last-of-type){
+    border-bottom: 1px solid $c-br-1;
+  }
+  ion-content {
+    .friend-tip {
+      padding: 0 1rem;
+      background-color: $c-tip-0;
+      color: $c-bg-2;
+      line-height: 3rem;
+    }
+    ion-row {
+      padding: 1rem;
+      .friend-img {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        text-align: center;
+        background-color: red;
+        margin-right: 0.5rem;
+      }
+      .friend-span {
+        flex: 1;
+        line-height: 35px;
+      }
+      .friend-div-yes {
+        width: 5rem;
+        height: 24px;
+        margin-top: 5px;
+        border-radius: 2px;
+        border: 1px solid $c-text-4;
+        color: $c-text-4;
+        padding: 3px 0.5rem;
+      }
+      .friend-div-no {
+        width: 6rem;
+        height: 24px;
+        margin-top: 5px;
+        border-radius: 2px;
+        border: 1px solid $c-bg-5;
+        color: $c-bg-5;
+        padding: 3px 0.5rem;
+      }
+    }
+  }
+}

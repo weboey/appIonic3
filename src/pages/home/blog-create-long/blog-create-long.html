@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>博文发布</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="done()" strong>
+        <span color="primary">
+          发布
+        </span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()">
+    <ion-item class="border">
+      <ion-label floating>文章标题</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+
+    <ion-item class="border">
+      <ion-label floating>帖子正文</ion-label>
+      <ion-textarea #textAreaRef
+                    class="blog-text"
+                    name="" id="blog-text" cols="30" rows="20"
+                    formControlName="content"
+                    style="padding: 0 16px">
+      </ion-textarea>
+    </ion-item>
+
+  </form>
+</ion-content>

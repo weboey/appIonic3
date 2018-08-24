@@ -1,0 +1,213 @@
+ion-content.content {
+  .login-list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .login-list-item {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      background-color: $c-bg-3;
+      input {
+        color: $c-text-0;
+      }
+      input::-webkit-input-placeholder {
+        color: $c-text-1;
+      }
+      button.button {
+
+      }
+    }
+  }
+}
+
+/* icon 图标和文字间距*/
+.ml5{margin-left: 5px;}
+.mr5{margin-right: 5px;}
+
+/* 博文正文 */
+.blog-text {
+  line-height: 22px;
+  font-size: 1.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+
+}
+
+.high-light-text {
+  color: $c-high-light;
+}
+
+/* 弱化文字 */
+.text-3 {
+  color: $c-text-3;
+}
+
+/* 头像，连接文字*/
+.text-5 {
+  color: $c-text-5;
+}
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-head-sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #32db64;
+  & ~ .user-head-sm {
+    margin-left: .2em;
+  }
+}
+
+ion-icon[name*='thumbs-up'] {
+  font-size: 1.2em;
+}
+
+/* 无数据*/
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $c-bg-2;
+  padding: 24px;
+  color: $c-text-2;
+}
+
+/* ion-item 增加border 样式类 就可以改变border颜色 */
+ion-item.border {
+  .item-inner {
+    border-color: rgba($c-bg-5, .3) !important;
+  }
+}
+/* ion-item 增加border 样式类 就可以改变border颜色 */
+ion-item.no-border {
+  .item-inner {
+    border:none !important;
+  }
+}
+//消息
+.tony-message-row{
+  border-bottom: 1px solid $c-br-1;
+}
+.tony-message-row {
+  padding: 1rem;
+  .mes-img {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    text-align: center;
+    background-color: red;
+    margin-right: 0.5rem;
+  }
+  .mes-con {
+    flex: 1;
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      & > span {
+        //flex: 1;
+      }
+      .mes-span-color {
+        color: $c-text-2;
+      }
+      .mes-span-tip {
+        display: inline-block;
+        background-color: $c-text-8;
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 16px;
+      }
+    }
+    .mes-com-top {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+.tony-message-comment {
+  padding: 0 !important;
+  ion-row {
+    display: block !important;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    background-color: $c-bg-2;
+    .comment-title {
+      display: flex;
+      margin-bottom: 12px;
+      padding: 0 1rem;
+      img {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        margin-right: 1rem;
+        background-color: red;
+      }
+      div {
+        span {
+          display: block;
+        }
+        .comment-title-name {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+        .comment-title-time {
+          color: $c-text-3;
+        }
+      }
+    }
+    .comment-replay {
+      padding: 0 1rem;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .comment-record {
+      padding: 0 1rem;
+      line-height: 36px;
+      background-color: $c-bg-1;
+    }
+    .comment-com {
+      display: flex;
+      padding: 0 1rem;
+      margin-top: 2px;
+      img {
+        display: inline-block;
+        min-width: 5rem;
+        min-height: 5rem;
+        background-color: red;
+        margin-right: 1rem;
+      }
+      .comment-news {
+        div {
+          font-size: 14px;
+          margin: 8px 0 5px 0;
+        }
+        p {
+          line-height: 16px;
+          color: $c-text-3;
+        }
+      }
+    }
+    .span-blue {
+      color: $c-high-light;
+    }
+  }
+}
+//.back-button-text {
+//  display: none !important; // 去掉返回两字
+//}
+//消息

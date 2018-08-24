@@ -1,3 +1,7 @@
 home-list-tip {
-
+  &>div{
+    font-size: 1.6rem;
+    background-color: $c-bg-4;
+    color: #1a1a1a;
+  }
 }

@@ -1,0 +1,25 @@
+message-inform {
+  .no-inform {
+    margin-top: 8rem;
+    text-align: center;
+    img {
+      width: 12rem;
+      height: 10rem;
+      display: inline-block;
+    }
+    span {
+      display: inline-block;
+      margin-top: 2rem;
+      width: 100%;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0 5rem;
+      color: $c-text-1;
+    }
+  }
+  .inform-content {
+    margin-top: 10px;
+    background-color: $c-bg-2;
+  }
+}

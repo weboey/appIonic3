@@ -1,0 +1,42 @@
+comment-show {
+  .card {
+    margin: 0 0 10px;
+    width: 100%;
+    box-shadow: none;
+    background-color: $c-bg-2;
+    .card-content {
+      padding-top: 6px;
+      padding-left: 10px;
+      padding-bottom: 2px;
+      p {
+        color: $c-text-0;
+      }
+    }
+
+  }
+  /* 列表 item 背景*/
+  .item {
+    background-color: $c-bg-2 !important;
+  }
+  .list-head {
+    padding-left: 8px !important;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%
+    }
+    .head-title {
+      flex: 1;
+      margin-left: 4px;
+      & > div {
+        font-weight: bold;
+        font-size: 1.5rem !important;
+        color: $c-text-5
+      }
+      & > span {
+        font-size: 1.4rem !important;
+        color: $c-text-3
+      }
+    }
+  }
+}

@@ -1,42 +1,97 @@
-
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>我的</ion-title>
-  </ion-navbar>
-
+    <ion-card>
+      <ion-card-content *ngIf="!userId">
+        <ion-avatar (click)="userId = 1" class="img-center"> <img src="../../assets/imgs/default-user-icon.png"></ion-avatar>
+        <ion-item text-center (click)="goLogin()" >未登录</ion-item>
+      </ion-card-content>
+      <ion-card-content *ngIf="userId">
+        <ion-avatar float-left (click)="userId = 1" class="user-img"> <img src="../../assets/imgs/default-user-icon.png"></ion-avatar>
+        <ion-item  float-right class="user-card">
+          <div class="setting-style" (click)="presentModal()">
+            <ion-icon float-right>
+              <img src="../../assets/img/user/setting-icon.png">
+            </ion-icon>
+          </div>
+          <div>
+            大黄蜂
+          </div>
+          <div>国服第一猴子,排位胜率4场0%</div>
+          <div class="authentication">
+            <ion-icon>
+              <img src="../../assets/img/user/ok-telephone.png">
+            </ion-icon>
+            <ion-icon>
+              <img src="../../assets/img/user/no-identity-card.png">
+            </ion-icon>
+            <ion-icon>
+              <img src="../../assets/img/user/no-name-card.png">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <div style="clear: both"></div>
+      </ion-card-content>
+      <ion-list>
+        <div (click)="goMyArticlePage()">
+          <span>0</span><br>
+          文章
+        </div>
+        <div (click)="goMyConcernPage()">
+          <span>0</span><br>
+          关注
+        </div>
+        <div (click)="goMeFansPage()">
+          <span>0</span><br>
+          粉丝
+        </div>
+      </ion-list>
+    </ion-card>
 </ion-header>
 
 <ion-content>
-  <ion-card-content>
-    <ion-item>
-        <ion-avatar item-start>
-            <img src="../../assets/icon/favicon.ico">
-        </ion-avatar>
-        <p text-right>  <ion-icon class='ios-cog-style' name="ios-cog" (click)="presentModal()"></ion-icon></p>
-        <h2>大黄蜂</h2>
-        <p>
-          <span margin-right>Lv9</span><ion-icon margin-right name='md-tablet-portrait'></ion-icon><ion-icon margin-right ios="ios-laptop" md="md-laptop"></ion-icon>  <ion-icon margin-right ios="ios-card" md="md-card"></ion-icon>
-        </p>
-        <p>专业收二级资金、垃圾债券，同时为银行、基金客户提供过券服务、费用低廉</p>
+  <ion-list>
+    <ion-item (click)="goMyCommentRecordPage()">
+      <ion-avatar item-start><img src="../../assets/img/user/my-comment-record.png"></ion-avatar>
+      评论记录
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
     </ion-item>
-      <div class='user-box-router'>
-          <div text-center><ion-icon ios="ios-document" md="md-document"></ion-icon><div>帖子</div></div>
-          <div text-center>  <ion-icon ios="ios-heart" md="md-heart"></ion-icon><div>关注</div></div>
-          <div text-center><ion-icon ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon><div>好友</div></div>
-          <div text-center><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon><div>粉丝</div></div>
-      </div>
-      <div class='user-box-router'>
-          <div text-center><ion-icon ios="ios-book" md="md-book"></ion-icon><div>评论记录</div></div>
-
-          <div text-center> <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon><div>我的点赞</div></div>
-
-          <div text-center>  <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon><div>收藏记录</div></div>
-
-          <div text-center>  <ion-icon ios="ios-filing" md="md-filing"></ion-icon><div>草稿箱</div></div>
-      </div>
-  </ion-card-content>
-  <ion-card-content>
-    <button ion-button (click)="goLogin()">登录</button>
-  </ion-card-content>
+    <ion-item (click)="goMyStarRecordPage()">
+      <ion-avatar item-start><img src="../../assets/img/user/my-star-record.png"></ion-avatar>
+      我的点赞
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
+    </ion-item>
+    <ion-item (click)="goMyCollectRecordPage()">
+      <ion-avatar item-start><img src="../../assets/img/user/my-collect-record.png"></ion-avatar>
+      收藏记录
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
+    </ion-item>
+    <ion-item (click)="goMyCollectRecordPage()">
+      <ion-avatar item-start><img src="../../assets/img/user/my-shared-record.png"></ion-avatar>
+      分享记录
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="goMyDraftListPage()">
+      <ion-avatar item-start><img src="../../assets/img/user/my-draft-list.png"></ion-avatar>
+      草稿箱
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
+    </ion-item>
+    <ion-item (click)="goFeedback()">
+      <ion-avatar item-start><img src="../../assets/img/user/feed-back.png"></ion-avatar>
+      意见反馈
+      <ion-note item-end>
+        <img src="../../assets/img/user/rigth-direction.png">
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

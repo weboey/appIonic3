@@ -1,10 +1,17 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable()
 export class Settings {
   private SETTINGS_KEY: string = '_settings';
+
+
+  public accessToken: string;
+
+  public refreshToken: string;
+
+  public userId: string;
 
   private theme: BehaviorSubject<string> = new BehaviorSubject('dark-theme');
 
@@ -15,6 +22,13 @@ export class Settings {
 
   constructor(public storage: Storage, defaults: any) {
     this._defaults = defaults;
+    this.gettoken().then();
+  }
+
+  async gettoken() {
+    this.accessToken = await this.storage.get('accessToken');
+    this.refreshToken = await this.storage.get('refreshToken');
+    this.userId = await this.getValue('userId');
   }
 
   load() {
@@ -71,12 +85,12 @@ export class Settings {
     return this.settings;
   }
 
-  // 设置猪蹄色
+  // 设置主题类
   setActiveTheme(val) {
     this.theme.next(val);
   }
 
-  // 获取主题色
+  // 获取主题类
   getActiveTheme() {
     return this.theme.asObservable();
   }

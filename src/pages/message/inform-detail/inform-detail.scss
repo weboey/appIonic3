@@ -1,0 +1,23 @@
+page-inform-detail {
+  .inform-detail {
+    background-color: $c-bg-2;
+    ion-row {
+      border-bottom: 1px solid $c-br-1;
+      padding: 1rem;
+      display: block;
+      .detail-name {
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+      }
+      .detail-time {
+        color: $c-text-3;
+      }
+      .detail-focus {
+        margin-bottom: 0.5rem;
+        .span-focus {
+          color: $c-high-light;
+        }
+      }
+    }
+  }
+}

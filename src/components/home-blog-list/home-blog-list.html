@@ -1,0 +1,62 @@
+<ion-card *ngFor="let item of currentItems">
+  <ion-row>
+    <ion-col col-12>
+      <div class="item item-block item-md list-head" style="padding-left:0">
+
+        <img [src]="item.creator?.image_url" (error)="imgLoadErr($event)"/>
+
+        <div class="head-title">
+          <div>{{item.creator.name}}</div> <!-- hh:mm:ss-->
+          <span>{{item.create_time | transformTime: 'yyyy-MM-dd'}}</span>
+        </div>
+
+        <fw-follow-btn style="margin-right: 4px"  [uid]="item?.creator.id"></fw-follow-btn>
+
+        <ion-icon *ngIf="isSelf(item?.creator.id); else otherIconTmp" name="ios-close" item-end
+                  (click)="openListEditPopover($event, item)"></ion-icon>
+        <ng-template #otherIconTmp>
+          <ion-icon name="ios-arrow-down" item-end (click)="openListEditPopover($event, item)"></ion-icon>
+        </ng-template>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-card-content (click)="openItem(item)">
+ <!--   <p class="blog-text">
+      {{item.content}}<a href="#" *ngIf="item.content.length>=140" style="margin-left: 5px">全文</a>
+    </p>-->
+    <fw-show-blog-content [content]="item.content" [title]="item.title"></fw-show-blog-content>
+
+    <div class="img-view-box">
+      <div  *ngFor="let img of item.image_url_list | imgPreHandler"
+            class="square"
+            [ngClass]="{'one': item.image_url_list.length==1,
+            'mul' : item.image_url_list.length!==1,
+            'w': img.type=='w',
+            'h': img.type=='h'}">
+        <image-viewer  [src]="img.src" [alt]="'博文图片'"></image-viewer>
+      </div>
+
+    </div>
+  </ion-card-content>
+
+  <ion-row col-12 class="footer-icon" justify-content-end>
+    <ion-col col-2 text-center (click)="doListOperation({name:'点赞', id: 1}, item)">
+      <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+      <span class="top-count">{{item.thumbs_count}}</span>
+    </ion-col>
+    <ion-col col-2 text-center (click)="doListOperation({name:'评论', id: 2})">
+      <ion-icon name="ios-text-outline"></ion-icon>
+      <span class="top-count">{{item.comment_count}}</span>
+    </ion-col>
+    <ion-col col-2 text-center (click)="doListOperation({name:'转发', id: 3})">
+      <ion-icon name="ios-redo-outline"></ion-icon>
+      <span class="top-count">{{item.forward_num}}</span>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+<ng-template #aaa>
+  <div>test</div>
+</ng-template>

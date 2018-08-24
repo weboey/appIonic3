@@ -1,0 +1,15 @@
+page-point-inform {
+  ion-content {
+    .point-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .point-time {
+      margin: 1rem 0 2rem 0;
+      text-align: center;
+      color: $c-text-3;
+    }
+  }
+}

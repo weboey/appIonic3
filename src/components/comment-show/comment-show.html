@@ -1,0 +1,25 @@
+<!-- Generated template for the CommentShowComponent component -->
+
+<ion-card *ngFor="let item of currentItems">
+  <ion-row>
+    <ion-col col-12>
+      <div class="item item-block item-md list-head" style="padding-left:0">
+        <img [src]="item.profilePic"/>
+        <div class="head-title">
+          <div>{{item.userName}}</div>
+          <span>{{item.date}}</span>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-card-content (click)="openItem(item)">
+    <div class="commentContent">
+      <p>{{item.comment ? item.comment : '评论内容.............'}}</p>
+    </div>
+    <div class="CommentaryArticleBox">
+      <p class="CommentaryArticleComment"></p>
+      <article-abstract></article-abstract>
+    </div>
+  </ion-card-content>
+</ion-card>

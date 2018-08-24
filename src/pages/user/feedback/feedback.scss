@@ -1,0 +1,40 @@
+page-feedback {
+  ion-content.content {
+    @mixin centerLayout {
+      width: 100%;
+      margin: 0 auto;
+      background-color: $c-bg-3;
+      color: $c-text-1;
+      font-family: PingFang-SC-Regular, serif;
+      font-size: 2rem;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0;
+      text-indent: 1rem;
+    }
+    ion-textarea.input {
+      @include centerLayout;
+      height: 20rem;
+      margin-top: 1.6rem;
+      margin-bottom: 1.6rem;
+      box-sizing: border-box;
+      text-indent: 2rem;
+      textarea {
+        height: 100%;
+        padding: 1rem;
+        overflow: auto;
+      }
+    }
+    ion-input.input {
+      @include centerLayout;
+      height: 3.6rem;
+      margin-bottom: 2rem;
+    }
+    button.button {
+      width: 95%;
+      height: 3.6rem;
+      margin: 0 auto;
+      border-radius: 1.8rem;
+    }
+  }
+}

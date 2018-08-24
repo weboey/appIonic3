@@ -1,0 +1,23 @@
+<!-- Generated template for the MessageInformComponent component -->
+<div *ngIf="!informData?.length" class="no-inform">
+  <img src="" alt="">
+  <span>暂无系统通知</span>
+</div>
+<ion-content *ngIf="informData?.length" class="inform-content">
+  <ion-grid>
+    <ion-row class='tony-message-row' *ngFor="let item of informData" (click)="goInformPage('1')">
+      <img class="mes-img" src="" alt="">
+      <!--<div class="mes-img">1</div>-->
+      <div class="mes-con">
+        <div class="mes-com-top">
+          <span>小猪佩奇</span>
+          <span class="mes-span-color">8:00</span>
+        </div>
+        <div class="mes-con-button">
+          <span class="mes-span-color">朱猪猪猪猪猪猪...</span>
+          <span class="mes-span-tip">3</span>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

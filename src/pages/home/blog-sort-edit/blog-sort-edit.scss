@@ -1,0 +1,40 @@
+page-blog-sort-edit {
+
+  //.image-group-box{
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //  .image-item{
+  //    width: calc((100% - 10px)/3);
+  //    position: relative;
+  //    margin-right: 5px;
+  //    margin-bottom: 5px;
+  //    background-color: $c-bg-3;
+  //    height: 108px;
+  //    .img-bg{
+  //      height: 100%;
+  //      width: 100%;
+  //      background-repeat: no-repeat;
+  //      background-size: cover;
+  //      display: inline-block;
+  //    }
+  //    ion-icon[name^='add'] {
+  //      font-size: 54px;
+  //    }
+  //    &:nth-of-type(3n){
+  //      margin-right: 0;
+  //    }
+  //    //.close-box{display: none;}
+  //    //&:hover {background-color: #2ec95c;}
+  //  }
+  //  .profile-image-wrapper{
+  //    display: flex;
+  //    flex-direction: column;
+  //    align-items: center;
+  //    justify-content: center;
+  //  }
+  //}
+  .scroll-content{
+    padding-bottom: 0 !important;
+  }
+}
+

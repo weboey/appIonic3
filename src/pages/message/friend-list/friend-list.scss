@@ -1,0 +1,63 @@
+page-friend-list {
+  ion-row:not(:last-of-type){
+    border-bottom: 1px solid $c-br-1;
+  }
+  ion-content {
+    .friend-tip {
+      padding: 0 1rem;
+      background-color: $c-tip-0;
+      color: $c-bg-2;
+      line-height: 3rem;
+    }
+    .no-friend {
+      .friend-img {
+        margin-top: 7rem;
+        text-align: center;
+        img {
+          width: 12rem;
+          height: 10rem;
+          display: inline-block;
+        }
+      }
+      .no-tip {
+        margin: 4rem 0 5rem 0;
+        line-height: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        color: $c-text-1;
+      }
+      .no-btn {
+        text-align: center;
+        button {
+          width: 12rem;
+          border-radius: 2px;
+        }
+      }
+    }
+    ion-row {
+      padding: 1rem;
+      .friend-img {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        text-align: center;
+        background-color: red;
+        margin-right: 0.5rem;
+      }
+      .friend-span {
+        flex: 1;
+        line-height: 35px;
+      }
+      .friend-div-yes {
+        width: 2rem;
+        //height: 24px;
+        //margin-top: 5px;
+        //border-radius: 2px;
+        //border: 1px solid $c-text-4;
+        //color: $c-text-4;
+        //padding: 3px 0.5rem;
+      }
+    }
+  }
+}

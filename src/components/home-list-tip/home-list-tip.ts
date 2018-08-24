@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the HomeListTipComponent component.
@@ -12,11 +12,7 @@ import { Component } from '@angular/core';
 })
 export class HomeListTipComponent {
 
-  text: string;
-
-  constructor() {
-    console.log('Hello HomeListTipComponent Component');
-    this.text = 'Hello World';
-  }
+  @Input() count: number;
+  constructor() {}
 
 }

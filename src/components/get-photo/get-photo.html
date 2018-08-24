@@ -1,0 +1,14 @@
+<!-- Generated template for the GetPhotoComponent component -->
+<div class="photoBox" padding>
+  <div *ngFor="let img of imageList; let i = index" class="image-item">
+    <ion-icon ios="ios-close" md="md-close" class="close-box" (click)="removeCurImg(img)"></ion-icon>
+    <img [src]="img" [alt]="'博文图片'" (click)="largerDisplay(i)">
+  </div>
+  <ng-container *ngIf="imageList.length<9">
+    <div class="profile-image-wrapper image-item" (click)="openSheets()">
+      <div>
+        <ion-icon name="add"></ion-icon>
+      </div>
+    </div>
+  </ng-container>
+</div>

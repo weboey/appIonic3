@@ -30,7 +30,11 @@ export class MessageContentComponent {
   }
   // 调到聊天详情
   goTalkPage(item) {
-    this.app.getRootNav().push('talk-detail', {data: item})
+    this.app.getRootNav().push('talk-detail', {data: item});
+  }
+  // 调到好友列表
+  goFriendPage (item) {
+    this.app.getRootNav().push('friend-list', {data: item});
   }
 
 }

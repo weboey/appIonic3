@@ -10,11 +10,11 @@
   </div>
   <!--登录表单-->
   <form (submit)="doLogin()">
-    <ul class="list">
-      <li class="list-item">
+    <ul class="login-list">
+      <li class="login-list-item">
         <ion-input type="tel" [(ngModel)]="account.tel" name="tel" placeholder="请输入您的手机号"></ion-input>
       </li>
-      <li class="list-item">
+      <li class="login-list-item">
         <ion-input [type]="passwordType" [(ngModel)]="account.password" name="password"
                    placeholder="请输入您的密码">
         </ion-input>

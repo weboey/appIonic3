@@ -1,0 +1,41 @@
+page-my-fans-and-concern {
+  ion-header.header {
+    ion-segment.segment {
+      justify-content: space-around;
+    }
+  }
+  ion-content.content {
+    background-color: $bg0;
+    ion-searchbar.searchbar {
+      .searchbar-input, .searchbar-input::-webkit-input-placeholder {
+        background-color: $bg3;
+        color: $text8;
+      }
+      .searchbar-search-icon {
+        width: 18px;
+        height: 18px;
+        background-size: 18px;
+      }
+    }
+    ion-list.list {
+      ion-item.item {
+        font-family: PingFang-SC-Regular, serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        color: $text4;
+        background-color: $bg0;
+        border-top: 1px solid $c-br-1;
+        &:last-child {
+          border-bottom: 1px solid $c-br-1;
+        }
+        ion-thumbnail img {
+          border-radius: 50%;
+        }
+        div.item-inner {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

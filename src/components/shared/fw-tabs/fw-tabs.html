@@ -1,0 +1,5 @@
+<ion-segment [(ngModel)]="selected" >
+  <ion-segment-button value="{{item.id}}" *ngFor="let item of items">
+    <span>{{item.title}} {{item.count}}</span>
+  </ion-segment-button>
+</ion-segment>

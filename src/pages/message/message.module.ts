@@ -9,7 +9,7 @@ import {ComponentsModule} from '../../components/components.module';
   ],
   imports: [
     ComponentsModule,
-    IonicPageModule.forChild(MessagePage),
+    IonicPageModule.forChild(MessagePage)
   ],
 })
 export class MessagePageModule {}

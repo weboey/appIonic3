@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .div1{
+      width:200px;
+      height:200px;
+      border:1px solid #4EC83B;
+      overflow: hidden;
+    }
+    .div1.h img {
+      position: relative;
+      top: -44px;
+      width: 100%;
+    }
+    .div1.w img {
+      position: relative;
+      left: -54px;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div style="float:left;margin:10px;">
+  第一种
+  <div class="div1 h">
+    <img src="./src/assets/img/test1.png"  alt="" />
+  </div>
+</div>
+
+<div style="float:left;margin:10px;">
+  第一种
+  <div class="div1 w">
+    <img src="./src/assets/img/badu-live.png"  alt="" />
+  </div>
+</div>
+
+<div style="float:left;margin:10px;">
+  长图
+  <div style="width:300px;height:400px;background-image:url(./src/assets/img/test1.png);background-repeat: no-repeat;background-position:center center;border:1px solid #4EC83B;">
+  </div>
+</div>
+
+<div style="float:left;margin:10px;">
+  宽图
+  <div style="width:300px;height:400px;border:1px solid #4EC83B; overflow: hidden;">
+    <img src="./src/assets/img/badu-live.png" width="500" height="700" style="margin:-150px -100px;" />
+  </div>
+</div>
+</body>
+</html>

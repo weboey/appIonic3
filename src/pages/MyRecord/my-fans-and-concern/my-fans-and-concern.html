@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MyFansAndConcernPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar [hideBackButton]="true">
+    <ion-title> {{type === 'fans' ? '粉丝' : '关注'}}</ion-title>
+    <ion-buttons>
+      <back-btn [backBtnText]="null"></back-btn>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="fans">
+        粉丝
+      </ion-segment-button>
+      <ion-segment-button value="concern">
+        关注
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'fans'">
+      <ion-item *ngFor="let item of mockData; let i = index">
+        <ion-thumbnail item-start>
+          <img [src]="item.src" width="35px" height="35px">
+        </ion-thumbnail>
+        <span>{{item.nickname}}</span>
+        <fw-follow-btn item-end (followHandler)="clickFollowHandler(item)"></fw-follow-btn>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'concern'">
+      <ion-item *ngFor="let item of mockData; let i = index">
+        <ion-thumbnail item-start>
+          <img [src]="item.src" width="35px" height="35px">
+        </ion-thumbnail>
+        <span>{{item.nickname}}</span>
+        <fw-follow-btn item-end (followHandler)="clickFollowHandler(item)"></fw-follow-btn>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

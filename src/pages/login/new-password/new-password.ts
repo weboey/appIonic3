@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {BaseUI} from "../../../common/baseUI.common";
+import {MainPage} from "../../index";
 
 /**
  * Generated class for the NewPasswordPage page.
@@ -16,7 +18,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
   selector: 'page-new-password',
   templateUrl: 'new-password.html',
 })
-export class NewPasswordPage {
+export class NewPasswordPage extends BaseUI {
   public passwordType = 'password';
 
   // 新密码
@@ -25,7 +27,8 @@ export class NewPasswordPage {
   // 确认密码
   confirmPassword: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navController: NavController, public navParams: NavParams) {
+    super();
   }
 
   ionViewDidLoad() {
@@ -37,4 +40,8 @@ export class NewPasswordPage {
     this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
   }
 
+  // 修改密码
+  changePassword() {
+    this.navController.push(MainPage).then();
+  }
 }

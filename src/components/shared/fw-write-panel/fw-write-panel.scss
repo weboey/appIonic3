@@ -1,0 +1,28 @@
+fw-write-panel {
+  .m-write-container{
+    display: flex;
+    align-items: flex-end;
+  }
+  .write-input-box{
+    flex: 1;
+    display: flex;
+    margin-right: 8px;
+    ion-textarea{
+      border-radius: 6px;
+      background-color: $c-bg-3;
+      padding: 0 8px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.write-panel{
+  .popover-content{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    top: initial !important;
+    border-radius: 0;
+  }
+}

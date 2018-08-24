@@ -1,0 +1,14 @@
+fw-show-blog-content {
+
+  a.all-label{
+    word-break: break-all;
+    word-spacing: unset;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+  p{
+    &.has-title{
+      text-indent:-8px
+    }
+  }
+}

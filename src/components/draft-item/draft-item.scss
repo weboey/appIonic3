@@ -1,0 +1,49 @@
+draft-item {
+  .card {
+    margin: 0 0 10px;
+    width: 100%;
+    box-shadow: none;
+    background-color: $c-bg-2;
+    .card-content {
+      padding-top: 6px;
+      padding-left: 10px;
+      padding-bottom: 2px;
+      p {
+        color: $c-text-0;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: -1px;
+      }
+    }
+  }
+  /* 列表 item 背景*/
+  .item {
+    background-color: $c-bg-2;
+  }
+  .list-head {
+    padding-left: 8px;
+    .head-title {
+      flex: 1;
+      margin-left: 4px;
+      & > span {
+        font-size: 1.4rem;
+        color: $c-text-3
+      }
+    }
+    button.button {
+      margin: 0;
+      color: $c-text-3;
+      ion-icon.icon {
+        margin: 0;
+      }
+    }
+  }
+  ion-icon {
+    font-size: 1.6em;
+    vertical-align: middle;
+  }
+  ion-row {
+    border: none;
+  }
+}

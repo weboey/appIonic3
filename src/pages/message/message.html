@@ -1,19 +1,34 @@
-<!--
-  Generated template for the MessagePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>我的消息</ion-title>
+    <ion-segment [(ngModel)]="selectMes">
+      <ion-segment-button *ngFor="let item of tabMes;" [value]="item.id">
+        <span>{{item.name}}</span>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goFriendPage(2)">添加</button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content *ngIf="!isLogin">
+  <div class="message-no-pic">
+    <img src="" alt="">
+  </div>
+  <div class="message-no-com">
+    登陆后，别人评论你的文章，给你发的消息都会在这里收到通知
+  </div>
+  <div class="message-no-btn">
+    <button ion-button class="message-resgin-btn" (click)="goResgin()">注册</button>
+    <button ion-button class="message-login-btn" (click)="goLoginPage()">登录</button>
+  </div>
+</ion-content>
 
-<ion-content padding>
-  <meaaage-tab (messageTabValue)="messageTab($event)"></meaaage-tab>
-  <message-content *ngIf="tabValue === '1'"></message-content>
+<ion-content *ngIf="isLogin">
+  <message-inform *ngIf="selectMes === 'sys'"></message-inform>
+  <meaaage-tab *ngIf="selectMes === 'mes'" (messageTabValue)="messageTab($event)"></meaaage-tab>
+  <message-content *ngIf="tabValue === '1' && selectMes === 'mes'"></message-content>
+  <message-comment *ngIf="tabValue === '2' && selectMes === 'mes'"></message-comment>
+  <message-praise *ngIf="tabValue === '3' && selectMes === 'mes'"></message-praise>
 </ion-content>

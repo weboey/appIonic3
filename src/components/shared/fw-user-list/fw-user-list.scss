@@ -1,0 +1,17 @@
+fw-user-list {
+  .list{
+    background-color: $c-bg-2 !important;
+    margin: 0 !important;
+    .item{
+      background-color: $c-bg-2 !important;
+      border-bottom: 0.5px solid rgba($c-bg-5,.2) !important;
+    }
+  }
+  .item-block{
+    border: none !important;
+    min-height: 3.6rem;
+  }
+  .item-block .item-inner{
+    border: none !important;
+  }
+}

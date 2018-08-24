@@ -1,48 +1,59 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>微博正文</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="more($event)">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row padding-left padding-right class="blog-head">
       <ion-col col-12>
         <div class="item item-block item-md list-head" style="padding-left:0">
-          <img [src]="item.profilePic"/>
+          <img [src]="blog?.creator?.image_url" (error)="imgLoadErr($event)"/>
           <div class="head-title">
-            <div>我是特朗普总统</div>
-            <span>2天前 19:35</span>
+            <div>{{blog?.creator?.name}}</div>
+            <span>{{blog?.create_time}}</span>
           </div>
-          <ion-icon name="md-heart-outline" item-end (click)="openListEditPopover($event)"></ion-icon>
+          <fw-follow-btn></fw-follow-btn>
         </div>
       </ion-col>
 
       <ion-col col-12>
-        <p style="margin: 0">
-          据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落
-          实中央领导指示精神和省委部署,高度关注长春长生生物科技有限
-          责任公司疫苗事件,要求对疫苗事件涉及到的责任者......
-        </p>
+        <p class="blog-text" [innerHTML]="blog.content_html"></p>
       </ion-col>
     </ion-row>
 
-    <ion-row class="detail-attr">
-      <ion-col col-6 >评论 3</ion-col>
-      <ion-col col-6>点赞 1235</ion-col>
+    <ion-row class="detail-attr" justify-content-start padding-left padding-right>
+      <ion-col  [class.bottom-line]="curTabIndex === 1" (click)="toggleTab(1)">评论 {{blog.comment_count}}</ion-col>
+      <ion-col  [class.bottom-line]="curTabIndex === 2" (click)="toggleTab(2)">点赞 {{blog.thumbs_count}}</ion-col>
     </ion-row>
 
+    <!--<fw-tabs [items]="[{title: '评论', id: 1 , count: 156},{title: '点赞', id: 2, count: 258}]"></fw-tabs>-->
   </ion-grid>
-
-  <home-blog-comments></home-blog-comments>
-
-  <div style="" class="footer-tools">
-    <span><ion-icon name="ios-git-branch"></ion-icon>分享</span>
-    <span><ion-icon name="ios-woman"></ion-icon>评论</span>
-    <span><ion-icon name="ios-thumbs-up"></ion-icon>赞</span>
+  <ng-container *ngIf="curTabIndex === 1; else userListTmp">
+    <home-blog-comments></home-blog-comments>
+  </ng-container>
+  <ng-template #userListTmp>
+    <fw-user-list></fw-user-list>
+  </ng-template>
+  <div  class="footer-tools" padding-left padding-right>
+    <div class="input-box" (click)="openWritePanel($event)">
+      <div class="input-placeholder" [hidden]="!showPlaceholder">
+        <ion-icon name="ios-brush-outline"></ion-icon>
+        写评论...
+      </div>
+      <input type="text" #inputEl (input)="clearPlaceholder(inputEl.value)" />
+    </div>
+    <ion-icon name="ios-star-outline"></ion-icon>
+    <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+    <ion-icon name="ios-redo-outline"></ion-icon>
   </div>
+
 </ion-content>
 

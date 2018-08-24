@@ -1,0 +1,26 @@
+page-blog-create-long {
+  .scroll-content{
+    padding-top: 0 !important;
+  }
+
+  ion-item.item{
+    padding: 0 !important;
+    background-color: $c-bg-2 !important;
+    ion-label{
+      color: $c-text-1;
+    }
+  }
+  ion-textarea{
+    padding: 0 !important;
+  }
+
+  .scroll-content{
+    padding-bottom: 0 !important;
+    &:before{
+      top: 0 !important;
+    }
+    &:after{
+      bottom: 0 !important;
+    }
+  }
+}

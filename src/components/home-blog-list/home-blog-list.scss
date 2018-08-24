@@ -1,0 +1,88 @@
+home-blog-list {
+  .card {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: none;
+    background-color: $c-bg-2;
+    .card-content {
+      padding-top: 6px;
+      padding-bottom: 2px;
+      p {
+        color: $c-text-0;
+      }
+    }
+
+  }
+  /* 列表 item 背景*/
+  .item{
+    background-color: $c-bg-2 !important;
+  }
+  .list-head{
+    padding-left: 8px !important;
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%
+    }
+    .head-title{
+      flex: 1;
+      margin-left: 4px;
+      &>div{font-weight: bold;font-size: 1.5rem !important; color: $c-text-5}
+      &>span{font-size: 1.4rem  !important; color: $c-text-3}
+    }
+  }
+  .footer-icon{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  ion-icon{
+    font-size: 1.6em;
+    vertical-align: middle;
+  }
+  .top-count{
+    position: relative;
+    top: -4px;
+    left: -5px;
+    font-size: 1.2rem;
+    color: $c-text-7;
+  }
+  ion-row{
+    border: none !important;
+  }
+  ion-avatar{
+    margin-right: 8px !important;
+  }
+}
+
+.img-view-box{
+  display: flex;
+  flex-wrap: wrap;
+  .square {
+    margin-bottom: 5px;
+    position: relative;
+    &:not(:nth-of-type(3n)){
+      margin-right: 5px;
+    }
+    &.mul{
+      width: calc((100% - 10px)/3);
+      image-viewer {
+        position: absolute;
+      }
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+    &.one{
+      max-width: calc((100% - 5px)/3*2);
+      &.w{
+        max-width: calc((100% - 5px)/3*2);
+      }
+      &.h{
+        //max-height: 150px;
+      }
+    }
+  }
+}

@@ -1,40 +1,49 @@
 page-register {
   ion-content.content {
     background-color: $bg0;
+    .login-list .login-list-item:nth-of-type(4) {
+      margin-bottom: 5px;
+    }
     .logoBox {
       text-align: center;
       margin-bottom: 2rem;
     }
-    .list {
+    button.button.getVerificationCode {
+      color: $text6;
+    }
+    .GVRP {
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      .list-item {
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        border-radius: 25px;
-        margin-bottom: 20px;
-        padding-left: 20px;
-        background-color: $bg1;
-        input, input::-webkit-input-placeholder, button.button {
-          color: $text0;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      ion-checkbox.checkbox {
+        margin-right: 1rem;
+        .checkbox-icon {
+          border-radius: 0;
         }
       }
-      button.button.getVerificationCode {
-        color: $text6;
+      button.button {
+        margin: 0;
+        padding: 0;
+        color: $c-text-9;
       }
-    }
-    ion-img {
-      background: none;
     }
     .loginBtnBox button {
       width: 80%;
       height: 4rem;
       margin: 0 auto;
       border-radius: 25px;
-      background-color: $btn0;
-      color: $text7;
+      background-color: $c-btn-1;
+      color: $c-text-10;
+    }
+    .goLoginText {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      button.button {
+        color: $c-text-9;
+      }
     }
   }
 }

@@ -1,0 +1,60 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-searchbar placeholder="搜索"  #searchRef  (ionInput)="onInput(searchRef.value)" (keyup)="onSearchKeyUp($event, searchRef.value)"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">取消</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)" [enabled]="!isShowSearchHistory()">
+    <ion-refresher-content
+      pullingIcon="arrow-down"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="数据加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ng-container *ngIf="isShowSearchHistory(); else loadBlogListTmp">
+    <ion-list  >
+      <ion-item *ngFor="let i of displayHistory">
+        <ion-icon name="ios-search" item-start ></ion-icon>
+        <span [innerHTML]="i"></span>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button class="clear" block (click)="trashLocalHistory()" *ngIf="displayHistory.length && (!blogList.length || !searchRef.value.length)">
+      <ion-icon name="ios-trash-outline"></ion-icon>
+      <span>清空历史记录</span>
+    </button>
+  </ng-container>
+
+  <ng-template #loadBlogListTmp>
+
+    <ng-container *ngIf="displayHistory.length==0; else blogListTmp">
+      <div class="no-data" >
+        <span>没有您要搜索的数据</span>
+      </div>
+      <h3 class="title-bar" padding>热点推荐 <ion-icon name="md-flame"></ion-icon></h3>
+    </ng-container>
+
+    <ng-template #blogListTmp>
+      <!-- 新闻列表 -->
+      <home-blog-list  [items]="blogList"></home-blog-list>
+    </ng-template>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="数据加载中..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-template>
+
+</ion-content>

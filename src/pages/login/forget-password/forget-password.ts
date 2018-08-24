@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {NewPasswordPage} from "../new-password/new-password";
 
 /**
  * Generated class for the ForgetPasswordPage page.
@@ -19,7 +20,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 export class ForgetPasswordPage {
 
   // 验证码图片URL
-  public verificationGraphURL: string;
+  public verificationGraphURL = 'assets/imgs/testGraphVerification.png';
 
   // 手机号码
   public tel: number;
@@ -31,13 +32,20 @@ export class ForgetPasswordPage {
   public verificationCode: number;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navController: NavController,
+    public navParams: NavParams,
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgetPasswordPage');
   }
 
+  nextStepOperation() {
+    this.navController.push(NewPasswordPage).then();
+
+  }
 
   // 刷新图片验证码
   refreshGraphVerification() {

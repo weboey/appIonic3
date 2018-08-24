@@ -1,0 +1,28 @@
+get-photo {
+  $width: 28vw;
+  .photoBox {
+    display: flex;
+    flex-wrap: wrap;
+    .image-item {
+      width: $width;
+      height: $width;
+      position: relative;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      background-color: $c-bg-3;
+      img {
+        width: $width;
+        height: $width;
+      }
+      ion-icon[name^='add'] {
+        font-size: 54px;
+      }
+    }
+    .profile-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

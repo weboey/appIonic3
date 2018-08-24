@@ -17,9 +17,7 @@ export class MeaaageTabComponent {
   tabList = [
     {id:'1', name: '聊天'},
     {id:'2', name: '评论'},
-    {id:'3', name: '赞'},
-    {id:'4', name: '@我的'},
-    {id:'5', name: '系统通知消息'}
+    {id:'3', name: '赞'}
   ];
 
   constructor() {

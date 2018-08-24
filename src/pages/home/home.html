@@ -5,19 +5,37 @@
         <ion-icon name="ios-apps-outline"></ion-icon>
       </button>
     </ion-buttons>-->
-    <ion-searchbar placeholder="搜索"></ion-searchbar>
+    <ion-searchbar placeholder="请输入您要搜索的关键字" (tap)="gotoSearchPage()"></ion-searchbar>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()">
-        <ion-icon name="ios-camera"></ion-icon>
+      <button ion-button icon-only (click)="addItem($event)">
+        <ion-icon name="ios-camera-outline"></ion-icon>
+        <span>发布</span>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <home-list-tip *ngIf="false"></home-list-tip>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-down"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="数据加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <home-list-tip *ngIf="showTip" [count]="10"></home-list-tip>
   <!-- 新闻过滤 -->
-  <home-list-filter></home-list-filter>
+  <home-list-filter (blogFilterTabChange)="tabChange($event)"></home-list-filter>
   <!-- 新闻列表 -->
-  <page-item-list></page-item-list>
+
+  <home-blog-list  [items]="currentItems"></home-blog-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

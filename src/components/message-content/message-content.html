@@ -1,14 +1,30 @@
-<!-- Generated template for the MessageContentComponent component -->
-<ion-grid>
-  <ion-row *ngFor="let item of contentList">
-    <div class="mes-img">1</div>
-    <div class="mes-con" (click)="goTalkPage('1')">
-      <div>6</div>
-      <div>9</div>
-    </div>
-    <div class="mes-time">
-      <div>8:00</div>
-      <div>3</div>
-    </div>
-  </ion-row>
-</ion-grid>
+
+<ion-content *ngIf="!contentList?.length" class="no-data content-color">
+  <div class="message-no-pic">
+    <img src="" alt="">
+  </div>
+  <div class="message-no-com">
+    暂无聊天信息
+  </div>
+  <div class="message-no-btn">
+    <button ion-button class="message-login-btn" (click)="goFriendPage(2)">发起聊天</button>
+  </div>
+</ion-content>
+<ion-content *ngIf="contentList?.length" class="content-color">
+  <ion-grid>
+    <ion-row class='tony-message-row' *ngFor="let item of contentList" (click)="goTalkPage('1')">
+      <img class="mes-img" src="" alt="">
+      <!--<div class="mes-img">1</div>-->
+      <div class="mes-con">
+        <div class="mes-com-top">
+          <span>小猪佩奇</span>
+          <span class="mes-span-color">8:00</span>
+        </div>
+        <div class="mes-con-button">
+          <span class="mes-span-color">朱猪猪猪猪猪猪...</span>
+          <span class="mes-span-tip">3</span>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

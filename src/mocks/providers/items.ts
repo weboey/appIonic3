@@ -5,57 +5,113 @@ import { Item } from '../../models/item';
 @Injectable()
 export class Items {
   items: Item[] = [];
-
-  defaultItem: any = {
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "about": "Burt is a Bear.",
-  };
-
-
+  //id 文章id
+  // userName
+  // profilePic: 用户头像
+  // date: 创建时间
+  // content: 内容
+  // thumbsCount: 点赞数量, commentCount: 评论数量， redoCount：转发数量
   constructor() {
     let items = [
       {
         "id":1,
-        "name": "Burt Bear",
-        "profilePic": "assets/img/speakers/bear.jpg",
-        "about": "Burt is a Bear."
-      },
-      {
+        creator:{
+          id: '2',
+          name: "我是特朗普总统",
+          image_url: "assets/img/speakers/bear.jpg"
+        },
+        "create_time": "2018-08-21",
+        "content": '据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落实中央领导指示精神和省委部署,高度关注长春长生生物科技有限责任公司疫苗事件,要求对疫苗事件涉及到的责任者',
+        "thumbs_count": 134,
+        "content_html": "",
+        "comment_count": 165,
+        "type": '0',
+        "forward_num": 888,
+        "image_url_list": [
+          "assets/img/speakers/bear.jpg",
+          "assets/img/speakers/cheetah.jpg",
+          "assets/img/speakers/duck.jpg",
+          "assets/img/speakers/eagle.jpg",
+          "assets/img/speakers/elephant.jpg",
+          "assets/img/speakers/puppy.jpg",
+          "assets/img/speakers/mouse.jpg",
+          "assets/img/test1.png",
+        ]
+      },{
         "id":2,
-        "name": "Charlie Cheetah",
-        "profilePic": "assets/img/speakers/cheetah.jpg",
-        "about": "Charlie is a Cheetah."
-      },
-      {
+        creator:{
+          id: '2',
+          name: "亚索",
+          image_url: "assets/img/speakers/elephant.jpg"
+        },
+        "create_time": "2018-08-21",
+        "content": '据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落实中央领导指示精神和省委部署,高度关注长春长生生物科技有限责任公司疫苗事件,要求对疫苗事件涉及到的责任者',
+        "content_html": "",
+        "thumbs_count": 134,
+        "comment_count": 165,
+        "type": '0',
+        "forward_num": 888,
+        "image_url_list": [
+          "assets/img/test1.png",
+        ]
+      },{
         "id":3,
-        "name": "Donald Duck",
-        "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Donald is a Duck."
+        creator:{
+          id: '2',
+          name: "亚瑟",
+          image_url: "assets/img/speakers/mouse.jpg"
+        },
+        "create_time": "2018-08-21",
+        "content": '据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落实中央领导指示精神和省委部署,高度关注长春长生生物科技有限责任公司疫苗事件,要求对疫苗事件涉及到的责任者',
+        "thumbs_count": 134,
+        "content_html": "",
+        "comment_count": 165,
+        "type": '0',
+        "forward_num": 888,
+        "image_url_list": [
+          "assets/img/badu-live.png",
+        ]
       },
       {
         "id":4,
-        "name": "Eva Eagle",
-        "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Eva is an Eagle."
+        creator:{
+          id: '2',
+          name: "阿离",
+          image_url: "assets/img/speakers/duck.jpg"
+        },
+        "create_time": "2018-08-16",
+        "content": '据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落实中央领导指示精神和省委部署,高度关注长春长生生物科技有限责任公司疫苗事件,要求对疫苗事件涉及到的责任者',
+        "thumbs_count": 134,
+        "content_html": "",
+        "comment_count": 165,
+        "type": '1',
+        "forward_num": 888,
+        "image_url_list": [
+          "assets/img/speakers/bear.jpg",
+          "assets/img/speakers/cheetah.jpg",
+        ]
       },
       {
         "id":5,
-        "name": "Ellie Elephant",
-        "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Ellie is an Elephant."
-      },
-      {
-        "id":6,
-        "name": "Molly Mouse",
-        "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Molly is a Mouse."
-      },
-      {
-        "id":7,
-        "name": "Paul Puppy",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Paul is a Puppy."
+        creator:{
+          id: '3',
+          name: "test",
+          image_url: "assets/img/speakers/cheetah.jpg",
+        },
+        "create_time": "2018-08-16",
+        "content": '据中央纪委国家监委网站客户端消息,吉林省纪委监委坚决贯彻落实中央领导指示精神和省委部署,高度关注长春长生生物科技有限责任公司疫苗事件,要求对疫苗事件涉及到的责任者',
+        "thumbs_count": 134,
+        "content_html": "",
+        "comment_count": 165,
+        "type": '1',
+        "forward_num": 888,
+        "image_url_list": [
+          "assets/img/speakers/bear.jpg",
+          "assets/img/speakers/cheetah.jpg",
+          "assets/img/speakers/duck.jpg",
+          "assets/img/speakers/eagle.jpg",
+          "assets/img/speakers/elephant.jpg",
+        ]
       }
     ];
 

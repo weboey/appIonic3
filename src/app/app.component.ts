@@ -26,6 +26,15 @@ export class MyApp {
     platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      if (window.indexedDB) {
+        console.log('I have WKWebview installed!');
+      } else {
+        console.log('I have UIWebView installed!');
+      }
+      this.settings.load().then(() => {
+        this.settings.setValue('test', '发我1.0');
+      });
     });
   }
 }

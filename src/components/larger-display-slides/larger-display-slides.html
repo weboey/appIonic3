@@ -1,0 +1,11 @@
+<!-- Generated template for the LargerDisplaySlidesComponent component -->
+<ion-header>
+  <ion-buttons>
+    <back-btn></back-btn>
+  </ion-buttons>
+</ion-header>
+<ion-slides [loop]="true" [initialSlide]="currentIndex">
+  <ion-slide *ngFor="let image of imageList">
+    <img [src]="image"/>
+  </ion-slide>
+</ion-slides>

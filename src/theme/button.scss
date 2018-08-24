@@ -1,0 +1,10 @@
+button{
+  &.bar-button-outline{
+    border-color: $c-br-0;
+  }
+
+  &[disabled^='true']{
+    border: 1px solid $c-bg-5;
+    color: $c-text-2;
+  }
+}

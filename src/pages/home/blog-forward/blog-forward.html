@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>转发帖文</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="done()">
+        <span color="primary">
+          发布
+        </span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-textarea #textAreaRef
+                class="blog-text"
+                placeholder="说说分享心得..."
+                cols="30" rows="10"
+                [(ngModel)]="textContent"
+                style="padding: 0 16px">
+  </ion-textarea>
+
+  <div class="blog-box">
+    <ion-avatar>
+      <img src="assets/img/speakers/cheetah.jpg">
+    </ion-avatar>
+    <div style="margin-left: 8px">
+      <h2>我是特朗普总统</h2>
+      <p>Ugh. As if.</p>
+    </div>
+  </div>
+
+  <ion-item class="no-border">
+    <ion-label class="text-3">同时评论</ion-label>
+    <ion-checkbox  [(ngModel)]="isComment"></ion-checkbox>
+  </ion-item>
+</ion-content>

@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
-import {App, IonicPage, LoadingController, NavController, ToastController} from 'ionic-angular';
-import {User} from '../../providers';
+import {AlertController, IonicPage, LoadingController, NavController, ToastController} from 'ionic-angular';
+import {UserProvider} from '../../providers';
 import {MainPage} from '../index';
 import {BaseUI} from "../../common/baseUI.common";
+import {ForgetPasswordPage} from "./forget-password/forget-password";
+import {RegisterPage} from "./register/register";
 
 @IonicPage({
   name: 'login-page',
@@ -14,6 +16,10 @@ import {BaseUI} from "../../common/baseUI.common";
 })
 export class LoginPage extends BaseUI {
 
+
+  // 输入错误次数
+  private inputErrorCount = 5;
+
   public account: { tel: string, password: string } = {
     tel: null,
     password: null
@@ -23,10 +29,10 @@ export class LoginPage extends BaseUI {
   public passwordType = 'password';
 
   constructor(private navController: NavController,
-              private user: User,
+              private user: UserProvider,
               private toastCtrl: ToastController,
               private loadingController: LoadingController,
-              private app: App) {
+              private alertController: AlertController) {
     super();
   }
 
@@ -38,16 +44,21 @@ export class LoginPage extends BaseUI {
       super.showToast(this.toastCtrl, '登录成功');
     }, () => {
       loading.dismiss().then();
-      super.showToast(this.toastCtrl, '登录失败');
+      this.inputErrorCount--;
+      if (this.inputErrorCount > 2) {
+        super.showToast(this.toastCtrl, '登录失败');
+      } else {
+        this.tipLoginPasswordError();
+      }
     });
   }
 
   goRegister() {
-    this.app.getRootNavs()[0].push('register-page').then();
+    this.navController.push(RegisterPage).then();
   }
 
   goForgetPassword() {
-    this.app.getRootNavs()[0].push('forget-password-page').then()
+    this.navController.push(ForgetPasswordPage).then()
   }
 
   dismiss() {
@@ -57,4 +68,23 @@ export class LoginPage extends BaseUI {
   switchPasswordInputType() {
     this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
   }
+
+  // 提示登录密码错误
+  tipLoginPasswordError() {
+    super.showAlert(this.alertController, null, {
+      message: `账户或密码错误，您还可输入${this.inputErrorCount}次，建议您找回密码`,
+      buttons: [
+        {
+          text: '取消',
+        },
+        {
+          text: '找回密码',
+          handler: () => {
+            this.navController.push(ForgetPasswordPage).then()
+          }
+        }
+      ]
+    })
+  }
+
 }
